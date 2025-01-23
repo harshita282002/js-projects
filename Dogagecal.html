@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <STYle>
+        .col-12{
+            width: 100%;
+            margin: auto;
+            text-align: center;
+            background-color: rgba(12, 9, 9, 0.915);
+            padding: 50px;
+        }
+        H1{
+            text-align: center;
+            color: rgb(223, 6, 6);
+            font-size: 50px;
+        }
+        P{
+            font-size: 30px;
+            text-align: center;
+            color: rgb(239, 209, 11);
+        }
+        INPUT{
+            padding: 20px;
+            margin: 10px;
+         border-radius:30px ;
+         border : none;
+            background-color: #bc0404;
+        }
+        .input:hover{
+            border: 3px solid red;
+        }
+        button{
+            padding: 20px;
+            border-radius: 30px;
+            margin: 10px;
+            background-color: rgb(225, 7, 7);
+            color: white;
+            border: none;
+        }
+    </STYle>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1> DOG AGE CALCULATOR</h1>
+            <p> This is a simple dog age calculator. Enter your dog's age and we will calculate the human age of your dog.</p>
+           <div class="BOX">
+            <p> Enter your dog's age:</p>   
+            <input type="text" id="dogAge" placeholder="Enter your dog's age">
+            <button onclick="calculateDogAge()">Calculate</button>
+            <p id="result"></p>
+           </div>
+
+        </div>
+    </div>
+</div>
+
+
+    <script>
+        function calculateDogAge(){
+            let dogAge = document.getElementById("dogAge").value;
+            let humanAge = (dogAge - 2) * 4 +21;
+            document.getElementById("result").innerHTML = "Your dog's age in human years is: " + humanAge;
+        }
+//  let dogAge =  prompt("Enter your dog age : ");
+// let humanAge = (dogAge - 2) * 4 +21;
+// alert(humanAge);
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
+
+
+<!-- DOG AGE-2 *4+21 -->
