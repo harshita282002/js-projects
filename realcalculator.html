@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    form{position: relative;
+        background-color: black;
+        padding: 40px 40px 80px 50px;
+        height: 530px;
+        width: 260px;
+        /* margin-left: 500px; */
+        border: 2px solid gray;
+        border-radius: 20px;
+        margin: auto;
+
+    }
+    input{
+        border: 2px solid gray;
+        height: 60px;
+        font-weight: 700;
+        font-size: 25px;
+        border-radius: 5px;
+        text-align: center;
+        background-color: rgb(214, 209, 209);
+        width: 220px;
+        /* padding-left:px;  */
+        /* margin-right:50px; */
+    }
+    button{ margin-top: 20px;
+        font-weight: 700;
+        height: 60px;
+        font-size: 24px;
+        padding: 22px;
+        text-align: center;
+        align-items: center;
+        /* gap: 50px; */
+        width: 60px;
+        border-radius: 50px;
+        background-color: rgba(61, 62, 59, 0.808);
+        border: none;
+        color: white;
+    }
+    button:hover{
+        background-color: rgb(244, 106, 19);
+        /* color: rgb(14, 12, 12); */
+    }
+    .bttn{
+      background-color: rgb(241, 200, 13);
+    }
+</style>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <form action="" onsubmit="return false" >
+        <input name="data" type="text" class="result">
+        <br><br>
+        <button class="clr" style="width: 45%;">AC</button>&nbsp;&nbsp;&nbsp;
+        <button  class="del" style="width: 45%;">DEL</button>
+        <br>
+        <button class="bttn" >+</button>
+        <button class="bttn">-</button>
+        <button class="bttn" >*</button>
+        <button class="bttn" >/</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <br>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <br>
+        <button >7</button>
+        <button>8</button>
+        <button>9</button>
+        <br>
+        <button>.</button>
+        <button>0</button>
+        <button>00</button>
+        
+        <button class="bttn" style="height: 300px; position: absolute; top: 280px; left: 248px;">=</button>
+        
+        
+    </form>
+
+    </div>
+  </div>
+</div>
+    <script>
+
+let clr = document.querySelector(".clr");
+      let del = document.querySelector(".del");
+
+      // let input = document.querySelect()
+
+      let btn = document.querySelectorAll("button");
+      // console.log(btn);
+      btn.forEach((functionBtn) => {
+        functionBtn.addEventListener("click", function () {
+          let input = document.querySelector(".result");
+          if (this.innerText === "=") {
+            input.value = eval(input.value);
+          } else if (this.textContent === "AC") {
+            input.value = "  ";
+          }else if 
+            (this.innerText ==="DEL"){
+              input.value= input.value.slice(0,-1);
+            }
+            else {
+            input.value += this.innerText;
+          }
+          } 
+          
+
+          // alert("Clicked" + "   :  " + this.innerText);
+        )});
+      
+    </script>
+</body>
+</html>
