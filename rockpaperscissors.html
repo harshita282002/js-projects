@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <style>
+    body{
+        background-image: url(https://img.freepik.com/premium-vector/hands-playing-rock-paper-scissors-game-flat-design-style-vector-illustration_540284-598.jpg?w=2000);
+        background-position: center;
+        background-size: cover;
+
+
+    }
+.box{ margin: auto;
+    background-color: rgba(90, 18, 32, 0.453);
+    height: 1000px;
+    width: 80%;
+    padding: 40px;
+
+    backdrop-filter: blur(9px);
+    border-radius: 40px;
+    margin-top: 100px;
+    
+}
+button{ 
+  /* margin-left: 30px; */
+    height: 100px;
+    width: 100px;
+    /* display: flex; */
+    /* flex-direction: row; */
+    gap: 30px;
+    margin: auto;
+    margin: 10px;
+    border-radius: 50%;
+    border: 2px solid seagreen;
+    /* background-color: rgba(16, 73, 102, 0.991); */
+    /* color: rgb(241, 236, 236); */
+}
+.button-box{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+button:hover{
+  background-color: slateblue;
+  transform: scale(1.3);
+}
+#result{
+    margin:auto;
+    border-radius: 50px;
+    border: none;
+    height:35%;
+    width: 100%;
+    font-size: 30px;
+    font-weight: 700;
+    background-color: rgba(248, 95, 179, 0.783);
+padding: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+}
+span{
+   /* background-color: aliceblue; */
+  text-align: center;
+  /* align-items: center; */
+    /* margin-left:400px; */
+    font-weight: 600;
+    display: flex;
+    font-size: 60px;
+    color: rgb(4, 24, 96);
+    transition:transform 0.5s linear;
+
+}
+span:hover{
+  color: brown;
+  transform: scale(1.1);
+
+}
+
+  </style>
+  <body>
+    <div class="main">
+    <div class="container-fluid">
+      <div class="row box">
+        <div class="col ">
+          <span>ROCK PAPER SCISSORS</span>
+          <br /><br /><br /><br />
+          <div class="button-box">
+            <button onclick="play('rock')" id="r"><i style="font-size: 40px;" class="fa-solid fa-hand-back-fist"></i> </button>
+
+            <button  onclick="play('paper')" id="p"><i class="fa-solid fa-hand" style="font-size: 40px;" ></i></button>
+  
+            <button  onclick="play('scissor')" id="s"><i class="fa-solid fa-hand-scissors" style="font-size: 40px;"></i></button>
+  
+          </div>
+
+        
+          <br><br>
+<div id="result" placeholder="result" readonly> </div>
+<BR></BR>
+<!-- <div class="scorebox"> -->
+<!-- <h2>SCORE</h2> -->
+<!-- <div id="compscore">computer:o </div> -->
+<!-- <div id="userscore">user:0</div> -->
+
+
+</div>
+
+        </div>  
+      </div>
+    </div>
+
+</div>
+
+
+
+ <script>
+let compscore=0
+let userscore=0
+
+       const play=(user)=>{
+        const compchoice =["rock","paper","scissor"];
+
+            const comp =compchoice[Math.floor(Math.random()*compchoice.length)];
+            let result ="";
+
+
+           if(user===comp){
+  result="TIE"
+}
+           else if(
+            (user=== "rock" &&comp==="scissor")||
+           (user==="paper" && comp==="rock")||
+           (user==="scissor" && comp==="paper")
+          )
+           {
+            userscore++
+           result= " Winner Winner Chicken Dinner"
+           }
+           else{
+            compscore++
+            result= "YOU LOST"
+            // print("you lost")
+
+            updatescore()
+        }
+
+
+        updatescore=(user,comp)=>{
+          document.getElementById("comp").innerHTML="computer"+" "+compscore;
+          document.getElementById("user").innerHTML="user: "+ " "+userscore;
+          
+        }
+
+        
+        document.getElementById("result").innerHTML = `You: ${user}<br>Computer: ${comp}<br>Result: ${result}`;
+        };
+      
+// scoreboard
+
+     
+
+
+    </script>
+  </body>
+</html>
+
+
